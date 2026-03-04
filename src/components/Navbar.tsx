@@ -1,11 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { motion, AnimatePresence } from "framer-motion";
 
-const navLinks = [
+const links = [
   { href: "/", label: "Home" },
   { href: "/services", label: "Services" },
   { href: "/pricing", label: "Pricing" },
@@ -14,144 +13,110 @@ const navLinks = [
 ];
 
 export default function Navbar() {
-  const [mobileOpen, setMobileOpen] = useState(false);
+  const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
 
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-brand-border/50 bg-brand-black/80 backdrop-blur-xl">
-      <div className="section-container flex h-16 items-center justify-between md:h-20">
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-200 ${
+        scrolled ? "bg-xs-black/95 backdrop-blur-sm border-b border-xs-border" : "bg-transparent"
+      }`}
+    >
+      <div className="container-main flex h-16 items-center justify-between lg:h-20">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 group">
-          <div className="relative flex h-8 w-8 items-center justify-center rounded-md bg-brand-accent">
-            <span className="font-heading text-sm font-bold text-brand-black">X</span>
+        <Link href="/" className="flex items-center gap-2.5">
+          <div className="flex h-8 w-8 items-center justify-center rounded bg-xs-green">
+            <span className="font-heading text-sm font-bold text-xs-black">X</span>
           </div>
-          <span className="font-heading text-lg font-semibold tracking-tight">
-            Xhine<span className="text-brand-muted font-normal ml-0.5">Systems</span>
+          <span className="font-heading text-base font-semibold tracking-tight sm:text-lg">
+            Xhine Systems
           </span>
         </Link>
 
-        {/* Desktop Links */}
-        <div className="hidden items-center gap-8 md:flex">
-          {navLinks.map((link) => (
+        {/* Desktop links */}
+        <div className="hidden items-center gap-7 lg:flex">
+          {links.map((l) => (
             <Link
-              key={link.href}
-              href={link.href}
-              className={`relative text-sm font-medium transition-colors hover:text-brand-white ${
-                pathname === link.href
-                  ? "text-brand-white"
-                  : "text-brand-muted"
+              key={l.href}
+              href={l.href}
+              className={`text-sm transition-colors ${
+                pathname === l.href
+                  ? "text-xs-white font-medium"
+                  : "text-xs-gray hover:text-xs-white"
               }`}
             >
-              {link.label}
-              {pathname === link.href && (
-                <motion.div
-                  layoutId="navbar-indicator"
-                  className="absolute -bottom-1 left-0 right-0 h-px bg-brand-accent"
-                  transition={{ type: "spring", stiffness: 350, damping: 30 }}
-                />
-              )}
+              {l.label}
             </Link>
           ))}
         </div>
 
         {/* Desktop CTA */}
-        <div className="hidden md:block">
-          <Link
-            href="/book"
-            className="inline-flex items-center gap-2 rounded-md bg-brand-accent px-5 py-2.5 text-sm font-semibold text-brand-black transition-all hover:bg-brand-accent-hover hover:shadow-lg hover:shadow-brand-accent/20"
-          >
-            Book a Call
-            <svg
-              className="h-4 w-4"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={2}
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M13 7l5 5m0 0l-5 5m5-5H6"
-              />
-            </svg>
-          </Link>
-        </div>
-
-        {/* Mobile Menu Button */}
-        <button
-          onClick={() => setMobileOpen(!mobileOpen)}
-          className="flex h-10 w-10 items-center justify-center rounded-md border border-brand-border md:hidden"
-          aria-label="Toggle menu"
+        <Link
+          href="/book"
+          className="hidden rounded bg-xs-green px-5 py-2 text-sm font-semibold text-xs-black transition-colors hover:bg-xs-green-hover lg:inline-flex"
         >
-          <div className="flex flex-col gap-1.5">
-            <span
-              className={`block h-px w-5 bg-brand-white transition-transform ${
-                mobileOpen ? "translate-y-[3.5px] rotate-45" : ""
-              }`}
-            />
-            <span
-              className={`block h-px w-5 bg-brand-white transition-opacity ${
-                mobileOpen ? "opacity-0" : ""
-              }`}
-            />
-            <span
-              className={`block h-px w-5 bg-brand-white transition-transform ${
-                mobileOpen ? "-translate-y-[3.5px] -rotate-45" : ""
-              }`}
-            />
-          </div>
+          Book a Call
+        </Link>
+
+        {/* Mobile toggle */}
+        <button
+          onClick={() => setOpen(!open)}
+          className="flex h-9 w-9 flex-col items-center justify-center gap-1.5 rounded border border-xs-border lg:hidden"
+          aria-label="Menu"
+        >
+          <span
+            className={`block h-px w-4 bg-xs-white transition-transform ${
+              open ? "translate-y-[3px] rotate-45" : ""
+            }`}
+          />
+          <span
+            className={`block h-px w-4 bg-xs-white transition-opacity ${
+              open ? "opacity-0" : ""
+            }`}
+          />
+          <span
+            className={`block h-px w-4 bg-xs-white transition-transform ${
+              open ? "-translate-y-[3px] -rotate-45" : ""
+            }`}
+          />
         </button>
       </div>
 
-      {/* Mobile Menu */}
-      <AnimatePresence>
-        {mobileOpen && (
-          <motion.div
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="overflow-hidden border-t border-brand-border/50 bg-brand-black/95 backdrop-blur-xl md:hidden"
-          >
-            <div className="section-container flex flex-col gap-1 py-4">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setMobileOpen(false)}
-                  className={`rounded-md px-4 py-3 text-sm font-medium transition-colors ${
-                    pathname === link.href
-                      ? "bg-brand-accent/10 text-brand-accent"
-                      : "text-brand-muted hover:bg-brand-surface hover:text-brand-white"
-                  }`}
-                >
-                  {link.label}
-                </Link>
-              ))}
+      {/* Mobile menu */}
+      {open && (
+        <div className="border-t border-xs-border bg-xs-black/98 lg:hidden">
+          <div className="container-main flex flex-col gap-1 py-4">
+            {links.map((l) => (
               <Link
-                href="/book"
-                onClick={() => setMobileOpen(false)}
-                className="mt-2 inline-flex items-center justify-center gap-2 rounded-md bg-brand-accent px-5 py-3 text-sm font-semibold text-brand-black"
+                key={l.href}
+                href={l.href}
+                onClick={() => setOpen(false)}
+                className={`rounded px-3 py-2.5 text-sm ${
+                  pathname === l.href
+                    ? "bg-xs-green/10 text-xs-green font-medium"
+                    : "text-xs-gray hover:text-xs-white"
+                }`}
               >
-                Book a Call
-                <svg
-                  className="h-4 w-4"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M13 7l5 5m0 0l-5 5m5-5H6"
-                  />
-                </svg>
+                {l.label}
               </Link>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            ))}
+            <Link
+              href="/book"
+              onClick={() => setOpen(false)}
+              className="mt-2 rounded bg-xs-green px-4 py-2.5 text-center text-sm font-semibold text-xs-black"
+            >
+              Book a Call
+            </Link>
+          </div>
+        </div>
+      )}
     </nav>
   );
 }

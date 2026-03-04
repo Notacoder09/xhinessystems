@@ -3,38 +3,31 @@
 import AnimateIn from "./AnimateIn";
 
 interface StepCardProps {
-  step: string;
+  number: string;
   title: string;
+  subtitle: string;
   description: string;
   index?: number;
 }
 
 export default function StepCard({
-  step,
+  number,
   title,
+  subtitle,
   description,
   index = 0,
 }: StepCardProps) {
   return (
-    <AnimateIn delay={index * 0.15}>
-      <div className="relative">
-        {/* Step number */}
-        <div className="mb-4 flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-md border border-brand-accent/20 bg-brand-accent/10">
-            <span className="font-mono text-sm font-medium text-brand-accent">
-              {step}
-            </span>
-          </div>
-          {index < 2 && (
-            <div className="hidden h-px flex-1 bg-gradient-to-r from-brand-accent/20 to-transparent lg:block" />
-          )}
+    <AnimateIn delay={index * 0.1}>
+      <div className="rounded-lg border border-xs-border bg-xs-card/50 p-6 sm:p-7">
+        <div className="mb-4 flex h-10 w-10 items-center justify-center rounded bg-xs-green/10 font-mono text-sm font-bold text-xs-green">
+          {number}
         </div>
-
-        <h3 className="font-heading text-lg font-semibold text-brand-white mb-2">
+        <h3 className="font-heading text-lg font-bold text-xs-white">
           {title}
         </h3>
-
-        <p className="text-sm text-brand-muted leading-relaxed">
+        <p className="mt-1 text-xs font-medium text-xs-green">{subtitle}</p>
+        <p className="mt-3 text-sm text-xs-gray leading-relaxed">
           {description}
         </p>
       </div>

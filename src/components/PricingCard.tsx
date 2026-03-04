@@ -1,7 +1,7 @@
 "use client";
 
+import Link from "next/link";
 import AnimateIn from "./AnimateIn";
-import CTAButton from "./CTAButton";
 
 interface PricingCardProps {
   name: string;
@@ -23,78 +23,47 @@ export default function PricingCard({
   index = 0,
 }: PricingCardProps) {
   return (
-    <AnimateIn delay={index * 0.15}>
+    <AnimateIn delay={index * 0.1}>
       <div
-        className={`relative h-full rounded-lg border p-8 transition-all duration-300 ${
+        className={`relative h-full rounded-lg border p-7 sm:p-8 ${
           highlighted
-            ? "border-brand-accent/30 bg-brand-surface/60 accent-glow"
-            : "border-brand-border bg-brand-surface/30 hover:border-brand-border/80"
+            ? "border-xs-green/30 bg-xs-card"
+            : "border-xs-border bg-xs-card/50"
         }`}
       >
         {badge && (
-          <div className="absolute -top-3 left-8 rounded-full bg-brand-accent px-3 py-1 text-xs font-semibold text-brand-black">
+          <div className="absolute -top-3 left-7 rounded-full bg-xs-green px-3 py-1 text-xs font-bold text-xs-black">
             {badge}
           </div>
         )}
 
-        <div className="mb-6">
-          <h3 className="font-heading text-xl font-semibold text-brand-white mb-1">
-            {name}
-          </h3>
-          <p className="text-sm text-brand-muted">{description}</p>
+        <h3 className="font-heading text-xl font-bold">{name}</h3>
+        <p className="mt-1 text-sm text-xs-gray">{description}</p>
+
+        <div className="mt-5 flex items-baseline gap-1">
+          <span className="font-heading text-4xl font-bold">{price}</span>
+          <span className="text-sm text-xs-gray">/month</span>
         </div>
 
-        <div className="mb-8">
-          <div className="flex items-baseline gap-1">
-            <span className="font-heading text-4xl font-bold text-brand-white">
-              {price}
-            </span>
-            <span className="text-sm text-brand-muted">/month</span>
-          </div>
-        </div>
-
-        <ul className="mb-8 space-y-3">
-          {features.map((feature) => (
-            <li key={feature} className="flex items-start gap-3">
-              <svg
-                className="mt-0.5 h-4 w-4 shrink-0 text-brand-accent"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={2.5}
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M5 13l4 4L19 7"
-                />
-              </svg>
-              <span className="text-sm text-brand-muted-light">{feature}</span>
+        <ul className="mt-6 space-y-2.5">
+          {features.map((f) => (
+            <li key={f} className="flex items-start gap-2.5 text-sm">
+              <span className="mt-0.5 text-xs-green">✓</span>
+              <span className="text-xs-gray-light">{f}</span>
             </li>
           ))}
         </ul>
 
-        <CTAButton
+        <Link
           href="/book"
-          variant={highlighted ? "primary" : "outline"}
-          size="md"
-          className="w-full"
+          className={`mt-7 block rounded py-3 text-center text-sm font-semibold transition-colors ${
+            highlighted
+              ? "bg-xs-green text-xs-black hover:bg-xs-green-hover"
+              : "border border-xs-green/30 text-xs-green hover:bg-xs-green/10"
+          }`}
         >
-          Book a Call
-          <svg
-            className="h-4 w-4"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            strokeWidth={2}
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M13 7l5 5m0 0l-5 5m5-5H6"
-            />
-          </svg>
-        </CTAButton>
+          Book a Call to Get Started →
+        </Link>
       </div>
     </AnimateIn>
   );

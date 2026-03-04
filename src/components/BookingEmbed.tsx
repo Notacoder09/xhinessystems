@@ -1,14 +1,14 @@
 "use client";
 
 export default function BookingEmbed() {
-  const bookingUrl = process.env.NEXT_PUBLIC_BOOKING_URL;
+  const url = process.env.NEXT_PUBLIC_BOOKING_URL;
 
-  if (!bookingUrl) {
+  if (!url) {
     return (
-      <div className="rounded-lg border border-brand-border bg-brand-surface/30 p-12 text-center">
-        <p className="text-sm text-brand-muted">
-          Booking calendar is being set up. Please check back soon or{" "}
-          <a href="/contact" className="text-brand-accent hover:underline">
+      <div className="rounded-lg border border-xs-border bg-xs-card p-12 text-center">
+        <p className="text-sm text-xs-gray">
+          Booking calendar is being set up. Check back soon or{" "}
+          <a href="/contact" className="text-xs-green underline">
             contact us directly
           </a>
           .
@@ -18,13 +18,12 @@ export default function BookingEmbed() {
   }
 
   return (
-    <div className="overflow-hidden rounded-lg border border-brand-border bg-brand-surface/20">
+    <div className="overflow-hidden rounded-lg border border-xs-border bg-xs-card">
       <iframe
-        src={bookingUrl}
-        title="Book a Discovery Call with Xhine Systems"
+        src={url}
+        title="Book a Call with Xhine Systems"
         className="h-[700px] w-full border-0"
         loading="lazy"
-        allow="payment"
       />
     </div>
   );

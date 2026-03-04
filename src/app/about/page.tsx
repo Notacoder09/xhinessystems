@@ -4,11 +4,11 @@ import AboutContent from "./AboutContent";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Xhine Systems was founded in Atlanta, GA to give trades and contractors the same online leverage big companies have. Learn our story.",
+    "Xhine Systems was built in Atlanta, GA by a young entrepreneur who saw contractors losing jobs to competitors who just marketed better. Here's the story.",
   openGraph: {
     title: "About | Xhine Systems",
     description:
-      "Xhine Systems was founded in Atlanta, GA to give trades and contractors the same online leverage big companies have. Learn our story.",
+      "Xhine Systems was built in Atlanta, GA by a young entrepreneur who saw contractors losing jobs to competitors who just marketed better.",
   },
 };
 

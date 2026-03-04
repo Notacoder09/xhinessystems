@@ -9,38 +9,25 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        brand: {
+        xs: {
           black: "#050505",
-          dark: "#0A0A0A",
-          surface: "#111111",
-          border: "#1A1A1A",
-          accent: "#00E87B",
-          "accent-hover": "#00CC6A",
-          "accent-dim": "#00E87B1A",
+          dark: "#0C0C0C",
+          card: "#111111",
+          border: "#1C1C1C",
+          "border-light": "#2A2A2A",
+          green: "#00FF94",
+          "green-dim": "#00FF9418",
+          "green-hover": "#00E085",
           white: "#FAFAFA",
-          muted: "#888888",
-          "muted-light": "#AAAAAA",
+          gray: "#999999",
+          "gray-light": "#BBBBBB",
+          "gray-dark": "#666666",
         },
       },
       fontFamily: {
-        heading: ["var(--font-space-grotesk)", "sans-serif"],
-        body: ["var(--font-outfit)", "sans-serif"],
-        mono: ["var(--font-jetbrains-mono)", "monospace"],
-      },
-      animation: {
-        "fade-up": "fadeUp 0.6s ease-out forwards",
-        "fade-in": "fadeIn 0.6s ease-out forwards",
-        pulse: "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
-      },
-      keyframes: {
-        fadeUp: {
-          "0%": { opacity: "0", transform: "translateY(24px)" },
-          "100%": { opacity: "1", transform: "translateY(0)" },
-        },
-        fadeIn: {
-          "0%": { opacity: "0" },
-          "100%": { opacity: "1" },
-        },
+        heading: ["var(--font-space-grotesk)", "system-ui", "sans-serif"],
+        body: ["var(--font-dm-sans)", "system-ui", "sans-serif"],
+        mono: ["var(--font-space-mono)", "monospace"],
       },
     },
   },
