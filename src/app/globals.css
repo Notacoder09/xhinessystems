@@ -8,18 +8,28 @@
   }
 
   body {
-    background-color: #050505;
+    background-color: #0f1623;
     color: #fafafa;
   }
 
   ::selection {
     background-color: #00FF94;
-    color: #050505;
+    color: #0f1623;
   }
 }
 
 @layer components {
   .container-main {
     @apply mx-auto w-full max-w-6xl px-5 sm:px-6;
+  }
+
+  /* Dark section */
+  .section-dark {
+    @apply bg-xs-navy text-xs-white;
+  }
+
+  /* Light section */
+  .section-light {
+    @apply bg-xs-cream text-xs-text-dark;
   }
 }

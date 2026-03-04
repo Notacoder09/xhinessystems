@@ -1,6 +1,7 @@
 "use client";
 
 import AnimateIn from "./AnimateIn";
+import DeviceMockup from "./DeviceMockup";
 
 interface FeatureSectionProps {
   label: string;
@@ -8,7 +9,11 @@ interface FeatureSectionProps {
   body: string;
   bullets?: string[];
   imageSide?: "left" | "right";
-  imagePlaceholder?: string;
+  theme?: "dark" | "light";
+  screenTitle?: string;
+  screenLines?: string[];
+  screenAccent?: string;
+  deviceType?: "phone" | "laptop";
 }
 
 export default function FeatureSection({
@@ -17,22 +22,43 @@ export default function FeatureSection({
   body,
   bullets,
   imageSide = "right",
-  imagePlaceholder = "Feature Preview",
+  theme = "dark",
+  screenTitle = "",
+  screenLines = [],
+  screenAccent,
+  deviceType = "phone",
 }: FeatureSectionProps) {
+  const isDark = theme === "dark";
+
   const textBlock = (
     <div className="flex flex-col justify-center">
       <span className="font-mono text-xs font-bold uppercase tracking-widest text-xs-green">
         {label}
       </span>
-      <h3 className="mt-3 font-heading text-2xl font-bold leading-snug sm:text-3xl">
+      <h3
+        className={`mt-3 font-heading text-2xl font-bold uppercase leading-snug tracking-wide sm:text-3xl ${
+          isDark ? "text-xs-white" : "text-xs-text-dark"
+        }`}
+      >
         {headline}
       </h3>
-      <p className="mt-4 text-xs-gray leading-relaxed">{body}</p>
+      <p
+        className={`mt-4 leading-relaxed ${
+          isDark ? "text-xs-gray-light" : "text-xs-text-muted"
+        }`}
+      >
+        {body}
+      </p>
       {bullets && bullets.length > 0 && (
         <ul className="mt-5 space-y-2">
           {bullets.map((b) => (
-            <li key={b} className="flex items-start gap-2.5 text-sm text-xs-gray-light">
-              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-xs-green" />
+            <li
+              key={b}
+              className={`flex items-start gap-2.5 text-sm ${
+                isDark ? "text-xs-gray-light" : "text-xs-text-muted"
+              }`}
+            >
+              <span className="mt-1 text-xs text-xs-green">✓</span>
               {b}
             </li>
           ))}
@@ -43,37 +69,37 @@ export default function FeatureSection({
 
   const imageBlock = (
     <div className="flex items-center justify-center">
-      <div className="relative w-full max-w-sm">
-        {/* Phone mockup placeholder */}
-        <div className="mx-auto aspect-[9/16] w-56 rounded-[2rem] border-2 border-xs-border-light bg-xs-card sm:w-64">
-          <div className="flex h-full flex-col items-center justify-center p-6 text-center">
-            <div className="mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-xs-green/10">
-              <span className="text-xl text-xs-green">✓</span>
-            </div>
-            <span className="text-sm font-medium text-xs-gray">
-              {imagePlaceholder}
-            </span>
-          </div>
-        </div>
-      </div>
+      <DeviceMockup
+        type={deviceType}
+        screenTitle={screenTitle || label}
+        screenLines={screenLines}
+        accentText={screenAccent}
+        theme={theme}
+      />
     </div>
   );
 
   return (
-    <AnimateIn>
-      <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
-        {imageSide === "left" ? (
-          <>
-            {imageBlock}
-            {textBlock}
-          </>
-        ) : (
-          <>
-            {textBlock}
-            {imageBlock}
-          </>
-        )}
+    <section
+      className={`py-16 lg:py-24 ${isDark ? "section-dark" : "section-light"}`}
+    >
+      <div className="container-main">
+        <AnimateIn>
+          <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+            {imageSide === "left" ? (
+              <>
+                {imageBlock}
+                {textBlock}
+              </>
+            ) : (
+              <>
+                {textBlock}
+                {imageBlock}
+              </>
+            )}
+          </div>
+        </AnimateIn>
       </div>
-    </AnimateIn>
+    </section>
   );
 }

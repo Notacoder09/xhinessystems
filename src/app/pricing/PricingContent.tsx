@@ -31,58 +31,58 @@ const faqs = [
   {
     question: "What's the difference between the two plans?",
     answer:
-      "Growth gives you the core system: website, booking, follow-up, missed call text back. Domination adds everything related to Google — review automation, business profile optimization, and local SEO. If you want to own your local search results, go with Domination.",
+      "Growth gives you the core system: website, booking, follow-up, missed call text back. Domination adds everything Google — review automation, business profile optimization, and local SEO. If you want to own your local search results, go Domination.",
   },
   {
     question: "Can I upgrade later?",
     answer:
-      "Absolutely. A lot of clients start with Growth to get the foundation in place, then upgrade to Domination once they see it working and want to go all-in on Google visibility.",
+      "Absolutely. A lot of clients start with Growth to get the foundation in place, then upgrade to Domination once they see it working.",
   },
   {
     question: "What if I want to cancel?",
     answer:
-      "Give us 30 days notice. No cancellation fees. You keep your Google reviews and business profile. Your website and automations are part of the service, so those would be deactivated — but we'll help you transition.",
+      "Give us 30 days notice. No cancellation fees. You keep your Google reviews and business profile. We'll help you transition.",
   },
   {
     question: "How fast do I get results?",
     answer:
-      "Your site and booking system are live in 7-10 days. Follow-up sequences activate immediately. Google rankings build over 2-4 weeks. Most clients see real lead flow within 30 days.",
+      "Site and booking live in 7-10 days. Follow-up sequences activate immediately. Google rankings build over 2-4 weeks. Most clients see real lead flow within 30 days.",
   },
   {
     question: "$197/month — is that really worth it?",
     answer:
-      "If you close even one extra job per month from it, you've already made your money back several times over. Most trades charge $200-$500+ per job. The math works out pretty fast.",
+      "If you close even one extra job per month, you've already made your money back several times over. Most trades charge $200-$500+ per job. Do the math.",
   },
   {
     question: "Do I have to sign a long-term contract?",
     answer:
-      "No. It's month to month. We keep clients by delivering results, not by locking them in. The only thing we ask is 30 days notice before you cancel.",
+      "No. Month to month. 30 days notice to cancel. We keep clients by delivering results, not contracts.",
   },
 ];
 
 export default function PricingContent() {
   return (
     <>
-      {/* Header */}
-      <section className="pt-28 pb-12 sm:pt-36 sm:pb-16">
+      {/* Header — dark */}
+      <section className="section-dark pt-28 pb-12 sm:pt-36 sm:pb-16">
         <div className="container-main text-center">
           <AnimateIn>
             <span className="font-mono text-xs font-bold uppercase tracking-widest text-xs-green">
               Pricing
             </span>
-            <h1 className="mt-3 font-heading text-3xl font-bold leading-tight sm:text-4xl lg:text-5xl">
+            <h1 className="mt-3 font-heading text-3xl font-bold uppercase leading-tight tracking-wide sm:text-4xl lg:text-5xl">
               Simple Pricing. No Surprises.
             </h1>
-            <p className="mx-auto mt-4 max-w-lg text-xs-gray leading-relaxed">
+            <p className="mx-auto mt-4 max-w-lg text-xs-gray-light leading-relaxed">
               Two plans. Everything included. No setup fees, no hidden costs, no
-              long-term contracts. Pick what fits.
+              contracts. Pick what fits.
             </p>
           </AnimateIn>
         </div>
       </section>
 
-      {/* Cards */}
-      <section className="pb-20 lg:pb-24">
+      {/* Cards — light */}
+      <section className="section-light py-16 lg:py-20">
         <div className="container-main">
           <div className="mx-auto grid max-w-3xl gap-5 md:grid-cols-2">
             <PricingCard
@@ -105,25 +105,19 @@ export default function PricingContent() {
         </div>
       </section>
 
-      {/* Comparison */}
-      <section className="py-16 border-t border-xs-border">
+      {/* Comparison — dark */}
+      <section className="section-dark py-16">
         <div className="container-main">
           <AnimateIn>
             <div className="mx-auto max-w-2xl">
-              <h2 className="text-center font-heading text-xl font-bold sm:text-2xl mb-8">
+              <h2 className="text-center font-heading text-xl font-bold uppercase tracking-wide sm:text-2xl mb-8">
                 Quick Comparison
               </h2>
               <div className="overflow-hidden rounded-lg border border-xs-border">
-                <div className="grid grid-cols-[1fr,80px,80px] sm:grid-cols-[1fr,120px,120px] border-b border-xs-border bg-xs-card px-4 py-3 sm:px-6">
-                  <span className="text-xs text-xs-gray uppercase tracking-wider">
-                    Feature
-                  </span>
-                  <span className="text-center text-xs text-xs-gray uppercase tracking-wider">
-                    Growth
-                  </span>
-                  <span className="text-center text-xs text-xs-green uppercase tracking-wider font-medium">
-                    Domination
-                  </span>
+                <div className="grid grid-cols-[1fr,80px,80px] sm:grid-cols-[1fr,120px,120px] border-b border-xs-border bg-xs-navy-light px-4 py-3 sm:px-6">
+                  <span className="text-xs text-xs-gray uppercase tracking-wider">Feature</span>
+                  <span className="text-center text-xs text-xs-gray uppercase tracking-wider">Growth</span>
+                  <span className="text-center text-xs text-xs-green uppercase tracking-wider font-bold">Domination</span>
                 </div>
                 {[
                   { name: "Custom Website", g: true, d: true },
@@ -145,18 +139,10 @@ export default function PricingContent() {
                   >
                     <span className="text-sm text-xs-gray-light">{row.name}</span>
                     <div className="text-center text-sm">
-                      {row.g ? (
-                        <span className="text-xs-green">✓</span>
-                      ) : (
-                        <span className="text-xs-gray-dark">—</span>
-                      )}
+                      {row.g ? <span className="text-xs-green">✓</span> : <span className="text-xs-gray-dark">—</span>}
                     </div>
                     <div className="text-center text-sm">
-                      {row.d ? (
-                        <span className="text-xs-green">✓</span>
-                      ) : (
-                        <span className="text-xs-gray-dark">—</span>
-                      )}
+                      {row.d ? <span className="text-xs-green">✓</span> : <span className="text-xs-gray-dark">—</span>}
                     </div>
                   </div>
                 ))}
@@ -166,21 +152,19 @@ export default function PricingContent() {
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="py-20 lg:py-24 border-t border-xs-border">
+      {/* FAQ — light */}
+      <section className="section-light py-16 lg:py-20">
         <div className="container-main">
           <AnimateIn>
             <div className="mb-10 text-center">
-              <span className="font-mono text-xs font-bold uppercase tracking-widest text-xs-green">
-                FAQ
-              </span>
-              <h2 className="mt-3 font-heading text-xl font-bold sm:text-2xl">
+              <span className="font-mono text-xs font-bold uppercase tracking-widest text-xs-green">FAQ</span>
+              <h2 className="mt-3 font-heading text-xl font-bold uppercase tracking-wide text-xs-text-dark sm:text-2xl">
                 Pricing Questions
               </h2>
             </div>
           </AnimateIn>
           <div className="mx-auto max-w-2xl">
-            <FAQAccordion items={faqs} />
+            <FAQAccordion items={faqs} theme="light" />
           </div>
         </div>
       </section>

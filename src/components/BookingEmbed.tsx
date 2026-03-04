@@ -5,8 +5,8 @@ export default function BookingEmbed() {
 
   if (!url) {
     return (
-      <div className="rounded-lg border border-xs-border bg-xs-card p-12 text-center">
-        <p className="text-sm text-xs-gray">
+      <div className="rounded-lg border border-xs-border-light bg-white p-12 text-center">
+        <p className="text-sm text-xs-text-muted">
           Booking calendar is being set up. Check back soon or{" "}
           <a href="/contact" className="text-xs-green underline">
             contact us directly
@@ -18,7 +18,7 @@ export default function BookingEmbed() {
   }
 
   return (
-    <div className="overflow-hidden rounded-lg border border-xs-border bg-xs-card">
+    <div className="overflow-hidden rounded-lg border border-xs-border-light bg-white">
       <iframe
         src={url}
         title="Book a Call with Xhine Systems"

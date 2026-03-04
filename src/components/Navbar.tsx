@@ -25,17 +25,21 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-colors duration-200 ${
-        scrolled ? "bg-xs-black/95 backdrop-blur-sm border-b border-xs-border" : "bg-transparent"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
+        scrolled
+          ? "bg-xs-navy/95 backdrop-blur-sm border-b border-xs-border shadow-lg shadow-black/10"
+          : "bg-transparent"
       }`}
     >
       <div className="container-main flex h-16 items-center justify-between lg:h-20">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2.5">
           <div className="flex h-8 w-8 items-center justify-center rounded bg-xs-green">
-            <span className="font-heading text-sm font-bold text-xs-black">X</span>
+            <span className="font-heading text-sm font-extrabold text-xs-navy">
+              X
+            </span>
           </div>
-          <span className="font-heading text-base font-semibold tracking-tight sm:text-lg">
+          <span className="font-heading text-base font-bold uppercase tracking-wider sm:text-lg">
             Xhine Systems
           </span>
         </Link>
@@ -60,7 +64,7 @@ export default function Navbar() {
         {/* Desktop CTA */}
         <Link
           href="/book"
-          className="hidden rounded bg-xs-green px-5 py-2 text-sm font-semibold text-xs-black transition-colors hover:bg-xs-green-hover lg:inline-flex"
+          className="hidden rounded bg-xs-green px-5 py-2 text-sm font-bold text-xs-navy uppercase tracking-wider transition-colors hover:bg-xs-green-hover lg:inline-flex"
         >
           Book a Call
         </Link>
@@ -91,7 +95,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="border-t border-xs-border bg-xs-black/98 lg:hidden">
+        <div className="border-t border-xs-border bg-xs-navy/98 lg:hidden">
           <div className="container-main flex flex-col gap-1 py-4">
             {links.map((l) => (
               <Link
@@ -110,7 +114,7 @@ export default function Navbar() {
             <Link
               href="/book"
               onClick={() => setOpen(false)}
-              className="mt-2 rounded bg-xs-green px-4 py-2.5 text-center text-sm font-semibold text-xs-black"
+              className="mt-2 rounded bg-xs-green px-4 py-2.5 text-center text-sm font-bold text-xs-navy uppercase tracking-wider"
             >
               Book a Call
             </Link>

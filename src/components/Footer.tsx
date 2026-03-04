@@ -2,22 +2,24 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-xs-border bg-xs-black">
+    <footer className="border-t border-xs-border bg-xs-navy">
       <div className="container-main py-14 lg:py-20">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div>
             <Link href="/" className="flex items-center gap-2.5">
               <div className="flex h-7 w-7 items-center justify-center rounded bg-xs-green">
-                <span className="font-heading text-xs font-bold text-xs-black">X</span>
+                <span className="font-heading text-xs font-extrabold text-xs-navy">
+                  X
+                </span>
               </div>
-              <span className="font-heading text-base font-semibold tracking-tight">
+              <span className="font-heading text-base font-bold uppercase tracking-wider">
                 Xhine Systems
               </span>
             </Link>
             <p className="mt-3 text-sm text-xs-gray leading-relaxed">
-              Websites, automation &amp; Google visibility for trades and
-              contractors. Based in Atlanta, GA.
+              We provide the structure, systems, and strategy. You bring the
+              commitment. Based in Atlanta, GA.
             </p>
           </div>
 
@@ -45,7 +47,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Plans */}
+          {/* Plans + Legal */}
           <div>
             <h4 className="text-sm font-semibold text-xs-white mb-3">Plans</h4>
             <ul className="space-y-2">
@@ -101,7 +103,7 @@ export default function Footer() {
             </p>
             <Link
               href="/book"
-              className="inline-flex rounded bg-xs-green px-5 py-2 text-sm font-semibold text-xs-black transition-colors hover:bg-xs-green-hover"
+              className="inline-flex rounded bg-xs-green px-5 py-2 text-sm font-bold text-xs-navy uppercase tracking-wider transition-colors hover:bg-xs-green-hover"
             >
               Book a Call →
             </Link>

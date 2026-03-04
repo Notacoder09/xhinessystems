@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
-import { Space_Grotesk, DM_Sans, Space_Mono } from "next/font/google";
+import { Barlow_Condensed, DM_Sans, Space_Mono } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import "./globals.css";
 
-const spaceGrotesk = Space_Grotesk({
+const barlowCondensed = Barlow_Condensed({
   subsets: ["latin"],
-  variable: "--font-space-grotesk",
+  variable: "--font-barlow-condensed",
   display: "swap",
-  weight: ["500", "600", "700"],
+  weight: ["500", "600", "700", "800"],
 });
 
 const dmSans = DM_Sans({
@@ -61,9 +61,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${spaceGrotesk.variable} ${dmSans.variable} ${spaceMono.variable}`}
+      className={`${barlowCondensed.variable} ${dmSans.variable} ${spaceMono.variable}`}
     >
-      <body className="bg-xs-black text-xs-white font-body antialiased">
+      <body className="bg-xs-navy text-xs-white font-body antialiased">
         <Navbar />
         <main>{children}</main>
         <Footer />

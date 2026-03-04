@@ -69,14 +69,16 @@ export default function LeadForm() {
   };
 
   const inputClass =
-    "w-full rounded border border-xs-border bg-xs-black px-4 py-2.5 text-sm text-xs-white placeholder:text-xs-gray-dark focus:border-xs-green/40 focus:outline-none";
+    "w-full rounded border border-xs-border-light bg-white px-4 py-2.5 text-sm text-xs-text-dark placeholder:text-gray-400 focus:border-xs-green/50 focus:outline-none focus:ring-1 focus:ring-xs-green/20";
 
   if (submitted) {
     return (
       <div className="rounded-lg border border-xs-green/20 bg-xs-green/5 p-8 text-center">
         <div className="mb-3 text-3xl">✓</div>
-        <h3 className="font-heading text-lg font-bold">Message Received</h3>
-        <p className="mt-2 text-sm text-xs-gray">
+        <h3 className="font-heading text-lg font-bold text-xs-text-dark">
+          Message Received
+        </h3>
+        <p className="mt-2 text-sm text-xs-text-muted">
           We&apos;ll reach out within 24 hours.
         </p>
       </div>
@@ -87,7 +89,9 @@ export default function LeadForm() {
     <form onSubmit={handleSubmit} className="space-y-4">
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
-          <label className="mb-1 block text-xs text-xs-gray">First Name *</label>
+          <label className="mb-1 block text-xs text-xs-text-muted">
+            First Name *
+          </label>
           <input
             type="text"
             required
@@ -98,7 +102,9 @@ export default function LeadForm() {
           />
         </div>
         <div>
-          <label className="mb-1 block text-xs text-xs-gray">Last Name *</label>
+          <label className="mb-1 block text-xs text-xs-text-muted">
+            Last Name *
+          </label>
           <input
             type="text"
             required
@@ -111,7 +117,9 @@ export default function LeadForm() {
       </div>
 
       <div>
-        <label className="mb-1 block text-xs text-xs-gray">Business Name *</label>
+        <label className="mb-1 block text-xs text-xs-text-muted">
+          Business Name *
+        </label>
         <input
           type="text"
           required
@@ -124,14 +132,14 @@ export default function LeadForm() {
 
       <div className="grid gap-4 sm:grid-cols-2">
         <div>
-          <label className="mb-1 block text-xs text-xs-gray">
+          <label className="mb-1 block text-xs text-xs-text-muted">
             Trade / Industry *
           </label>
           <select
             required
             value={industry}
             onChange={(e) => setIndustry(e.target.value)}
-            className={`${inputClass} ${!industry ? "text-xs-gray-dark" : ""}`}
+            className={`${inputClass} ${!industry ? "text-gray-400" : ""}`}
           >
             <option value="">Select your trade</option>
             {tradeOptions.map((t) => (
@@ -142,7 +150,9 @@ export default function LeadForm() {
           </select>
         </div>
         <div>
-          <label className="mb-1 block text-xs text-xs-gray">Phone *</label>
+          <label className="mb-1 block text-xs text-xs-text-muted">
+            Phone *
+          </label>
           <input
             type="tel"
             required
@@ -155,7 +165,9 @@ export default function LeadForm() {
       </div>
 
       <div>
-        <label className="mb-1 block text-xs text-xs-gray">Email *</label>
+        <label className="mb-1 block text-xs text-xs-text-muted">
+          Email *
+        </label>
         <input
           type="email"
           required
@@ -167,7 +179,9 @@ export default function LeadForm() {
       </div>
 
       <div>
-        <label className="mb-1 block text-xs text-xs-gray">Message</label>
+        <label className="mb-1 block text-xs text-xs-text-muted">
+          Message
+        </label>
         <textarea
           value={message}
           onChange={(e) => setMessage(e.target.value)}
@@ -178,7 +192,7 @@ export default function LeadForm() {
       </div>
 
       {error && (
-        <div className="rounded border border-red-500/20 bg-red-500/5 p-3 text-sm text-red-400">
+        <div className="rounded border border-red-300 bg-red-50 p-3 text-sm text-red-600">
           {error}
         </div>
       )}
@@ -186,12 +200,12 @@ export default function LeadForm() {
       <button
         type="submit"
         disabled={loading}
-        className="w-full rounded bg-xs-green py-3 text-sm font-semibold text-xs-black transition-colors hover:bg-xs-green-hover disabled:opacity-50"
+        className="w-full rounded bg-xs-green py-3 text-sm font-bold text-xs-navy uppercase tracking-wider transition-colors hover:bg-xs-green-hover disabled:opacity-50"
       >
         {loading ? "Sending..." : "Send Message →"}
       </button>
 
-      <p className="text-xs text-xs-gray/50 leading-relaxed">
+      <p className="text-xs text-gray-400 leading-relaxed">
         By submitting this form, you agree to receive SMS and email
         communications from Xhine Systems. Reply STOP to opt out at any time.
       </p>
