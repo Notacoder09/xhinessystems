@@ -4,11 +4,11 @@ import BookContent from "./BookContent";
 export const metadata: Metadata = {
   title: "Book a Call",
   description:
-    "Book a free 20-minute discovery call with Xhine Systems. We'll audit your online presence and map out a plan to get your phone ringing.",
+    "Book a free 20-minute discovery call with XhinesSystems. We'll audit your online presence and map out a plan to get your phone ringing.",
   openGraph: {
-    title: "Book a Call | Xhine Systems",
+    title: "Book a Call | XhinesSystems",
     description:
-      "Book a free 20-minute discovery call with Xhine Systems. We'll audit your online presence and map out a plan.",
+      "Book a free 20-minute discovery call with XhinesSystems. We'll audit your online presence and map out a plan.",
   },
 };
 

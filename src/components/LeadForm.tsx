@@ -45,7 +45,7 @@ export default function LeadForm() {
       businessName,
       industry,
       message,
-      source: "Xhine Systems Website",
+      source: "XhinesSystems Website",
       tags: ["website-lead"],
     };
 
@@ -207,7 +207,7 @@ export default function LeadForm() {
 
       <p className="text-xs text-gray-400 leading-relaxed">
         By submitting this form, you agree to receive SMS and email
-        communications from Xhine Systems. Reply STOP to opt out at any time.
+        communications from XhinesSystems. Reply STOP to opt out at any time.
       </p>
     </form>
   );

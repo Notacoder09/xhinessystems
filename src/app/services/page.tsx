@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     "Custom websites, booking automation, lead follow-up, review systems, Google visibility, and missed call text back — built for trades and contractors.",
   openGraph: {
-    title: "Services | Xhine Systems",
+    title: "Services | XhinesSystems",
     description:
       "Custom websites, booking automation, lead follow-up, review systems, Google visibility, and missed call text back — built for trades and contractors.",
   },

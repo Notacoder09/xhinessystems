@@ -3,11 +3,11 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
-    "Xhine Systems Privacy Policy — how we collect, use, and protect your personal information.",
+    "XhinesSystems Privacy Policy — how we collect, use, and protect your personal information.",
   openGraph: {
-    title: "Privacy Policy | Xhine Systems",
+    title: "Privacy Policy | XhinesSystems",
     description:
-      "Xhine Systems Privacy Policy — how we collect, use, and protect your personal information.",
+      "XhinesSystems Privacy Policy — how we collect, use, and protect your personal information.",
   },
 };
 
@@ -28,7 +28,7 @@ export default function PrivacyPolicyPage() {
           <div className="mx-auto max-w-2xl space-y-8 text-sm text-xs-text-muted leading-relaxed">
             <div>
               <h2 className="font-heading text-base font-bold uppercase tracking-wide text-xs-text-dark mb-2">1. Introduction</h2>
-              <p>Xhine Systems (&ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;us&rdquo;) operates xhinessystems.com and provides local presence management services for trades and contractors. This Privacy Policy explains how we collect, use, and protect your personal information.</p>
+              <p>XhinesSystems (&ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;us&rdquo;) operates xhinessystems.com and provides local presence management services for trades and contractors. This Privacy Policy explains how we collect, use, and protect your personal information.</p>
             </div>
             <div>
               <h2 className="font-heading text-base font-bold uppercase tracking-wide text-xs-text-dark mb-2">2. Information We Collect</h2>
@@ -51,7 +51,7 @@ export default function PrivacyPolicyPage() {
             </div>
             <div>
               <h2 className="font-heading text-base font-bold uppercase tracking-wide text-xs-text-dark mb-2">4. SMS and Email Communications</h2>
-              <p>By submitting a form or booking a call, you consent to receive SMS and email communications from Xhine Systems. These may include appointment confirmations, reminders, follow-up messages, and service updates.</p>
+              <p>By submitting a form or booking a call, you consent to receive SMS and email communications from XhinesSystems. These may include appointment confirmations, reminders, follow-up messages, and service updates.</p>
               <p className="mt-2"><strong className="text-xs-text-dark">Opt-Out:</strong> Reply STOP to any SMS to opt out. Click unsubscribe in any email. Standard message and data rates may apply.</p>
             </div>
             <div>
@@ -91,7 +91,7 @@ export default function PrivacyPolicyPage() {
               <h2 className="font-heading text-base font-bold uppercase tracking-wide text-xs-text-dark mb-2">12. Contact</h2>
               <p>Questions? Reach us at:</p>
               <div className="mt-2 rounded border border-xs-border-light bg-white p-4 shadow-sm">
-                <p className="text-xs-text-dark font-medium">Xhine Systems</p>
+                <p className="text-xs-text-dark font-medium">XhinesSystems</p>
                 <p>Atlanta, GA</p>
                 <p>hello@xhinessystems.com</p>
               </div>

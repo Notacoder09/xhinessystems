@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Terms of Service",
-  description: "Xhine Systems Terms of Service — the agreement governing use of our services and website.",
+  description: "XhinesSystems Terms of Service — the agreement governing use of our services and website.",
   openGraph: {
-    title: "Terms of Service | Xhine Systems",
-    description: "Xhine Systems Terms of Service — the agreement governing use of our services and website.",
+    title: "Terms of Service | XhinesSystems",
+    description: "XhinesSystems Terms of Service — the agreement governing use of our services and website.",
   },
 };
 
@@ -24,11 +24,11 @@ export default function TermsOfServicePage() {
           <div className="mx-auto max-w-2xl space-y-8 text-sm text-xs-text-muted leading-relaxed">
             <div>
               <h2 className="font-heading text-base font-bold uppercase tracking-wide text-xs-text-dark mb-2">1. Agreement</h2>
-              <p>By using xhinessystems.com or engaging our services, you agree to these Terms of Service. These terms form a binding agreement between you (&ldquo;Client&rdquo;) and Xhine Systems (&ldquo;we,&rdquo; &ldquo;us&rdquo;).</p>
+              <p>By using xhinessystems.com or engaging our services, you agree to these Terms of Service. These terms form a binding agreement between you (&ldquo;Client&rdquo;) and XhinesSystems (&ldquo;we,&rdquo; &ldquo;us&rdquo;).</p>
             </div>
             <div>
               <h2 className="font-heading text-base font-bold uppercase tracking-wide text-xs-text-dark mb-2">2. Services</h2>
-              <p>Xhine Systems provides:</p>
+              <p>XhinesSystems provides:</p>
               <ul className="mt-2 list-disc pl-5 space-y-1">
                 <li>Custom website design and development</li>
                 <li>Google Business Profile optimization</li>
@@ -57,7 +57,7 @@ export default function TermsOfServicePage() {
               <ul className="mt-2 list-disc pl-5 space-y-1">
                 <li>Services remain active through the current billing cycle.</li>
                 <li>You keep your Google Business Profile and reviews.</li>
-                <li>Website and automations (owned by Xhine Systems) are deactivated. Domain stays yours if registered in your name.</li>
+                <li>Website and automations (owned by XhinesSystems) are deactivated. Domain stays yours if registered in your name.</li>
                 <li>We provide reasonable transition assistance if needed.</li>
                 <li>No partial refunds for unused billing periods.</li>
               </ul>
@@ -74,7 +74,7 @@ export default function TermsOfServicePage() {
             </div>
             <div>
               <h2 className="font-heading text-base font-bold uppercase tracking-wide text-xs-text-dark mb-2">6. Intellectual Property</h2>
-              <p>Websites, designs, copy, and automations created by Xhine Systems remain our intellectual property unless explicitly transferred in writing. You get a license to use them during your active subscription.</p>
+              <p>Websites, designs, copy, and automations created by XhinesSystems remain our intellectual property unless explicitly transferred in writing. You get a license to use them during your active subscription.</p>
             </div>
             <div>
               <h2 className="font-heading text-base font-bold uppercase tracking-wide text-xs-text-dark mb-2">7. Limitation of Liability</h2>
@@ -91,7 +91,7 @@ export default function TermsOfServicePage() {
             </div>
             <div>
               <h2 className="font-heading text-base font-bold uppercase tracking-wide text-xs-text-dark mb-2">9. Indemnification</h2>
-              <p>You agree to indemnify Xhine Systems from claims arising from your breach of these terms, your use of our services, or violation of any law.</p>
+              <p>You agree to indemnify XhinesSystems from claims arising from your breach of these terms, your use of our services, or violation of any law.</p>
             </div>
             <div>
               <h2 className="font-heading text-base font-bold uppercase tracking-wide text-xs-text-dark mb-2">10. Communications Consent</h2>
@@ -109,7 +109,7 @@ export default function TermsOfServicePage() {
               <h2 className="font-heading text-base font-bold uppercase tracking-wide text-xs-text-dark mb-2">13. Contact</h2>
               <p>Questions about these terms?</p>
               <div className="mt-2 rounded border border-xs-border-light bg-white p-4 shadow-sm">
-                <p className="text-xs-text-dark font-medium">Xhine Systems</p>
+                <p className="text-xs-text-dark font-medium">XhinesSystems</p>
                 <p>Atlanta, GA</p>
                 <p>hello@xhinessystems.com</p>
               </div>

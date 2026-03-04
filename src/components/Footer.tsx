@@ -1,6 +1,15 @@
+"use client";
+
 import Link from "next/link";
+import Image from "next/image";
+import { useState } from "react";
+
+const GREEN_FILTER =
+  "brightness(0) saturate(100%) invert(74%) sepia(69%) saturate(500%) hue-rotate(93deg) brightness(103%) contrast(101%)";
 
 export default function Footer() {
+  const [logoError, setLogoError] = useState(false);
+
   return (
     <footer className="border-t border-xs-border bg-xs-navy">
       <div className="container-main py-14 lg:py-20">
@@ -8,13 +17,19 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <Link href="/" className="flex items-center gap-2.5">
-              <div className="flex h-7 w-7 items-center justify-center rounded bg-xs-green">
-                <span className="font-heading text-xs font-extrabold text-xs-navy">
-                  X
-                </span>
-              </div>
+              {!logoError && (
+                <Image
+                  src="/logo.png"
+                  alt="XhinesSystems Logo"
+                  width={64}
+                  height={32}
+                  className="h-8 w-auto"
+                  style={{ filter: GREEN_FILTER }}
+                  onError={() => setLogoError(true)}
+                />
+              )}
               <span className="font-heading text-base font-bold uppercase tracking-wider">
-                Xhine Systems
+                XhinesSystems
               </span>
             </Link>
             <p className="mt-3 text-sm text-xs-gray leading-relaxed">
@@ -113,11 +128,11 @@ export default function Footer() {
         {/* Bottom */}
         <div className="mt-14 border-t border-xs-border pt-6 flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
           <p className="text-xs text-xs-gray/60">
-            © {new Date().getFullYear()} Xhine Systems. All rights reserved.
+            © {new Date().getFullYear()} XhinesSystems. All rights reserved.
           </p>
           <p className="text-xs text-xs-gray/50 max-w-xl leading-relaxed">
             By texting or submitting a form, you agree to receive SMS and email
-            from Xhine Systems. Reply STOP to opt out. Standard message and data
+            from XhinesSystems. Reply STOP to opt out. Standard message and data
             rates may apply.
           </p>
         </div>

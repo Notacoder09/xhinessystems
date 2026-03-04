@@ -21,7 +21,7 @@ export default function BookingEmbed() {
     <div className="overflow-hidden rounded-lg border border-xs-border-light bg-white">
       <iframe
         src={url}
-        title="Book a Call with Xhine Systems"
+        title="Book a Call with XhinesSystems"
         className="h-[700px] w-full border-0"
         loading="lazy"
       />

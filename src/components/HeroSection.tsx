@@ -183,7 +183,7 @@ export default function HeroSection() {
                   fontWeight="600"
                   letterSpacing="4"
                 >
-                  SYSTEMS
+                  XHINESSYSTEMS
                 </text>
               </svg>
             </div>

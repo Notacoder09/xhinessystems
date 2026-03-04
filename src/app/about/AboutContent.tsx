@@ -28,7 +28,7 @@ export default function AboutContent() {
           <AnimateIn>
             <div className="mx-auto max-w-2xl space-y-5 text-xs-text-muted leading-relaxed">
               <p className="text-lg text-xs-text-dark font-medium">
-                Xhine Systems started because I kept seeing the same thing:
+                XhinesSystems started because I kept seeing the same thing:
                 great contractors losing jobs to worse ones who just marketed
                 better.
               </p>
@@ -47,7 +47,7 @@ export default function AboutContent() {
                 That didn&apos;t sit right with me.
               </p>
               <p>
-                I&apos;m 18, based in Atlanta, and I built Xhine Systems from
+                I&apos;m 18, based in Atlanta, and I built XhinesSystems from
                 the ground up. Not because I needed a side project — because I
                 saw a real problem that nobody was solving properly. The big
                 agencies don&apos;t care about a local plumber. The DIY builders

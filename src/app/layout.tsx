@@ -29,8 +29,8 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://xhinessystems.com"),
   title: {
     default:
-      "Xhine Systems — Websites, Automation & Google Visibility for Contractors",
-    template: "%s | Xhine Systems",
+      "XhinesSystems — Websites, Automation & Google Visibility for Contractors",
+    template: "%s | XhinesSystems",
   },
   description:
     "We build websites, booking systems, and lead follow-up automation for trades and contractors. Get found on Google. Get more calls. Starting at $197/mo.",
@@ -38,15 +38,15 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://xhinessystems.com",
-    siteName: "Xhine Systems",
+    siteName: "XhinesSystems",
     title:
-      "Xhine Systems — Websites, Automation & Google Visibility for Contractors",
+      "XhinesSystems — Websites, Automation & Google Visibility for Contractors",
     description:
       "We build websites, booking systems, and lead follow-up automation for trades and contractors. Get found on Google. Get more calls. Starting at $197/mo.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Xhine Systems",
+    title: "XhinesSystems",
     description:
       "Websites, automation & Google visibility for trades and contractors.",
   },

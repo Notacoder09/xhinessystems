@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 const links = [
@@ -12,9 +13,13 @@ const links = [
   { href: "/contact", label: "Contact" },
 ];
 
+const GREEN_FILTER =
+  "brightness(0) saturate(100%) invert(74%) sepia(69%) saturate(500%) hue-rotate(93deg) brightness(103%) contrast(101%)";
+
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [logoError, setLogoError] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
@@ -34,13 +39,26 @@ export default function Navbar() {
       <div className="container-main flex h-16 items-center justify-between lg:h-20">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2.5">
-          <div className="flex h-8 w-8 items-center justify-center rounded bg-xs-green">
-            <span className="font-heading text-sm font-extrabold text-xs-navy">
-              X
-            </span>
-          </div>
+          {logoError ? (
+            <div className="flex h-10 items-center rounded border border-dashed border-xs-green/40 bg-xs-navy-light px-2 py-1">
+              <span className="text-[9px] text-xs-green/60 leading-tight whitespace-nowrap">
+                [Drop logo.png<br />into /public]
+              </span>
+            </div>
+          ) : (
+            <Image
+              src="/logo.png"
+              alt="XhinesSystems Logo"
+              width={80}
+              height={40}
+              className="h-10 w-auto"
+              style={{ filter: GREEN_FILTER }}
+              onError={() => setLogoError(true)}
+              priority
+            />
+          )}
           <span className="font-heading text-base font-bold uppercase tracking-wider sm:text-lg">
-            Xhine Systems
+            XhinesSystems
           </span>
         </Link>
 

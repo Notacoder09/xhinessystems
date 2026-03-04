@@ -14,6 +14,7 @@ interface FeatureSectionProps {
   screenLines?: string[];
   screenAccent?: string;
   deviceType?: "phone" | "laptop";
+  customVisual?: React.ReactNode;
 }
 
 export default function FeatureSection({
@@ -27,6 +28,7 @@ export default function FeatureSection({
   screenLines = [],
   screenAccent,
   deviceType = "phone",
+  customVisual,
 }: FeatureSectionProps) {
   const isDark = theme === "dark";
 
@@ -69,13 +71,15 @@ export default function FeatureSection({
 
   const imageBlock = (
     <div className="flex items-center justify-center">
-      <DeviceMockup
-        type={deviceType}
-        screenTitle={screenTitle || label}
-        screenLines={screenLines}
-        accentText={screenAccent}
-        theme={theme}
-      />
+      {customVisual || (
+        <DeviceMockup
+          type={deviceType}
+          screenTitle={screenTitle || label}
+          screenLines={screenLines}
+          accentText={screenAccent}
+          theme={theme}
+        />
+      )}
     </div>
   );
 

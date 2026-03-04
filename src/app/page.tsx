@@ -8,6 +8,7 @@ import TradesGrid from "@/components/TradesGrid";
 import StepCard from "@/components/StepCard";
 import FAQAccordion from "@/components/FAQAccordion";
 import CTASection from "@/components/CTASection";
+import IMessageMockup from "@/components/IMessageMockup";
 
 const faqs = [
   {
@@ -132,14 +133,7 @@ export default function HomePage() {
         ]}
         imageSide="right"
         theme="dark"
-        screenTitle="SMS Follow-Up"
-        screenLines={[
-          "Hey John! Thanks for reaching out.",
-          "When works best for a quick call?",
-          "Still need help with that project?",
-          "Last chance — want us to swing by?",
-        ]}
-        screenAccent="Auto-sent in 2 minutes"
+        customVisual={<IMessageMockup />}
       />
 
       <FeatureSection

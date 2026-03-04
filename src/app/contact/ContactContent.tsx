@@ -82,7 +82,7 @@ export default function ContactContent() {
               <AnimateIn delay={0.16}>
                 <div className="rounded-lg border border-xs-border-light bg-white p-6 shadow-sm">
                   <h3 className="font-heading text-sm font-bold uppercase tracking-wide text-xs-text-dark mb-2">
-                    Xhine Systems
+                    XhinesSystems
                   </h3>
                   <p className="text-sm text-xs-text-muted">📍 Atlanta, GA</p>
                   <p className="text-sm text-xs-text-muted">✉️ hello@xhinessystems.com</p>
