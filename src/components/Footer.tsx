@@ -4,9 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 
-const GREEN_FILTER =
-  "brightness(0) saturate(100%) invert(74%) sepia(69%) saturate(500%) hue-rotate(93deg) brightness(103%) contrast(101%)";
-
 export default function Footer() {
   const [logoError, setLogoError] = useState(false);
 
@@ -16,19 +13,18 @@ export default function Footer() {
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div>
-            <Link href="/" className="flex items-center gap-2.5">
+            <Link href="/" className="flex flex-col items-start gap-1.5">
               {!logoError && (
                 <Image
                   src="/logo.png"
                   alt="XhinesSystems Logo"
-                  width={64}
-                  height={32}
-                  className="h-8 w-auto"
-                  style={{ filter: GREEN_FILTER }}
+                  width={48}
+                  height={48}
+                  className="h-12 w-12 object-contain"
                   onError={() => setLogoError(true)}
                 />
               )}
-              <span className="font-heading text-base font-bold uppercase tracking-wider">
+              <span className="font-heading text-sm font-bold uppercase tracking-wider">
                 XhinesSystems
               </span>
             </Link>

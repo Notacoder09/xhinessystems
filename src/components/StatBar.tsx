@@ -6,7 +6,6 @@ const stats = [
   { value: "100%", label: "Done-For-You" },
   { value: "24/7", label: "Automated Booking" },
   { value: "30-Day", label: "Results Timeline" },
-  { value: "$197", label: "Starting Price" },
 ];
 
 export default function StatBar() {

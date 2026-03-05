@@ -13,9 +13,6 @@ const links = [
   { href: "/contact", label: "Contact" },
 ];
 
-const GREEN_FILTER =
-  "brightness(0) saturate(100%) invert(74%) sepia(69%) saturate(500%) hue-rotate(93deg) brightness(103%) contrast(101%)";
-
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -38,7 +35,7 @@ export default function Navbar() {
     >
       <div className="container-main flex h-16 items-center justify-between lg:h-20">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2.5">
+        <Link href="/" className="flex flex-col items-center gap-1">
           {logoError ? (
             <div className="flex h-10 items-center rounded border border-dashed border-xs-green/40 bg-xs-navy-light px-2 py-1">
               <span className="text-[9px] text-xs-green/60 leading-tight whitespace-nowrap">
@@ -49,15 +46,14 @@ export default function Navbar() {
             <Image
               src="/logo.png"
               alt="XhinesSystems Logo"
-              width={80}
+              width={40}
               height={40}
-              className="h-10 w-auto"
-              style={{ filter: GREEN_FILTER }}
+              className="h-10 w-10 object-contain"
               onError={() => setLogoError(true)}
               priority
             />
           )}
-          <span className="font-heading text-base font-bold uppercase tracking-wider sm:text-lg">
+          <span className="font-heading text-[10px] font-bold uppercase tracking-wider leading-tight">
             XhinesSystems
           </span>
         </Link>
